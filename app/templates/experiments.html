@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Create Experiment</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Experiment ID</label>
+        <input class="form-control" name="experiment_id" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input class="form-control" name="title" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Product</label>
+        <input class="form-control" name="product">
+    </div>
+
+    <div class="mb-3">
+        <label>Batch Number</label>
+        <input class="form-control" name="batch_number">
+    </div>
+
+    <div class="mb-3">
+        <label>Sample ID</label>
+        <input class="form-control" name="sample_id">
+    </div>
+
+    <div class="mb-3">
+        <label>Test Type</label>
+        <input class="form-control" name="test_type">
+    </div>
+
+    <div class="mb-3">
+        <label>Objective</label>
+        <textarea class="form-control" name="objective"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Save Experiment
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Experiments</h2>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for experiment in experiments %}
+
+        <tr>
+
+            <td>{{ experiment.experiment_id }}</td>
+
+            <td>{{ experiment.title }}</td>
+
+            <td>{{ experiment.product }}</td>
+
+            <td>{{ experiment.status }}</td>
+
+            <td>
+
+                <a href="{{ url_for('experiments.view_experiment', id=experiment.id) }}"
+                   class="btn btn-sm btn-primary">
+                    View
+                </a>
+
+                <a href="{{ url_for('experiments.edit_experiment', id=experiment.id) }}"
+                   class="btn btn-sm btn-warning">
+                    Edit
+                </a>
+
+                <a href="{{ url_for('experiments.delete_experiment', id=experiment.id) }}"
+                   class="btn btn-sm btn-danger">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% else %}
+
+        <tr>
+
+            <td colspan="5" class="text-center">
+                No experiments found.
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

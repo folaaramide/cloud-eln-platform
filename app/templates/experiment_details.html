@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ experiment.title }}</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Experiment ID</th>
+        <td>{{ experiment.experiment_id }}</td>
+    </tr>
+
+    <tr>
+        <th>Product</th>
+        <td>{{ experiment.product }}</td>
+    </tr>
+
+    <tr>
+        <th>Batch Number</th>
+        <td>{{ experiment.batch_number }}</td>
+    </tr>
+
+    <tr>
+        <th>Sample ID</th>
+        <td>{{ experiment.sample_id }}</td>
+    </tr>
+
+    <tr>
+        <th>Test Type</th>
+        <td>{{ experiment.test_type }}</td>
+    </tr>
+
+    <tr>
+        <th>Objective</th>
+        <td>{{ experiment.objective }}</td>
+    </tr>
+
+    <tr>
+        <th>Status</th>
+        <td>{{ experiment.status }}</td>
+    </tr>
+
+    <tr>
+        <th>Results</th>
+        <td>{{ experiment.results }}</td>
+    </tr>
+
+    <tr>
+        <th>Conclusion</th>
+        <td>{{ experiment.conclusion }}</td>
+    </tr>
+
+    <tr>
+        <th>Notes</th>
+        <td>{{ experiment.notes }}</td>
+    </tr>
+
+</table>
+
+<a href="/experiments" class="btn btn-secondary">
+    Back
+</a>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Experiment</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input class="form-control"
+               name="title"
+               value="{{ experiment.title }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Product</label>
+        <input class="form-control"
+               name="product"
+               value="{{ experiment.product }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Batch Number</label>
+        <input class="form-control"
+               name="batch_number"
+               value="{{ experiment.batch_number }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Sample ID</label>
+        <input class="form-control"
+               name="sample_id"
+               value="{{ experiment.sample_id }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Test Type</label>
+        <input class="form-control"
+               name="test_type"
+               value="{{ experiment.test_type }}">
+    </div>
+
+    <div class="mb-3">
+        <label>Objective</label>
+        <textarea class="form-control"
+                  name="objective">{{ experiment.objective }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Results</label>
+        <textarea class="form-control"
+                  name="results">{{ experiment.results }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Conclusion</label>
+        <textarea class="form-control"
+                  name="conclusion">{{ experiment.conclusion }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Notes</label>
+        <textarea class="form-control"
+                  name="notes">{{ experiment.notes }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+
+        <select class="form-control" name="status">
+
+            <option {% if experiment.status=="Draft" %}selected{% endif %}>Draft</option>
+
+            <option {% if experiment.status=="In Progress" %}selected{% endif %}>In Progress</option>
+
+            <option {% if experiment.status=="Completed" %}selected{% endif %}>Completed</option>
+
+        </select>
+
+    </div>
+
+    <button class="btn btn-success">
+        Update Experiment
+    </button>
+
+</form>
+
+{% endblock %}
