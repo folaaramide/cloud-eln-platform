@@ -39,6 +39,7 @@ def experiments():
         experiments=experiment_list
     )
 
+
 @experiments_bp.route("/experiment/<int:id>")
 @login_required
 def view_experiment(id):
@@ -49,6 +50,7 @@ def view_experiment(id):
         "experiment_details.html",
         experiment=experiment
     )
+
 
 @experiments_bp.route("/experiment/<int:id>/edit", methods=["GET", "POST"])
 @login_required
@@ -81,6 +83,7 @@ def edit_experiment(id):
         "edit_experiment.html",
         experiment=experiment
     )
+
 
 @experiments_bp.route("/experiment/<int:id>/delete", methods=["GET", "POST"])
 @login_required
