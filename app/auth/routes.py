@@ -13,30 +13,55 @@ def register():
 
     form = RegistrationForm()
 
+    print("Register page opened")
+
     if form.validate_on_submit():
 
-        hashed_password = bcrypt.generate_password_hash(
-            form.password.data
-        ).decode("utf-8")
+        print("Form validation passed")
 
-        user = User(
-            full_name=form.full_name.data,
-            email=form.email.data,
-            password=hashed_password,
-            role=form.role.data
-        )
+        try:
 
-        db.session.add(user)
-        db.session.commit()
+            hashed_password = bcrypt.generate_password_hash(
+                form.password.data
+            ).decode("utf-8")
 
-        flash("Registration successful!", "success")
+            user = User(
+                full_name=form.full_name.data,
+                email=form.email.data,
+                password=hashed_password,
+                role=form.role.data
+            )
 
-        return redirect(url_for("auth.login"))
+            db.session.add(user)
+            db.session.commit()
+
+            print("User successfully saved")
+
+            flash("Registration successful!", "success")
+
+            return redirect(url_for("auth.login"))
+
+        except Exception as e:
+
+            db.session.rollback()
+
+            print("DATABASE ERROR:")
+            print(e)
+
+            flash(str(e), "danger")
+
+    else:
+
+        if form.is_submitted():
+
+            print("FORM VALIDATION FAILED")
+            print(form.errors)
 
     return render_template(
         "register.html",
         form=form
     )
+
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
@@ -73,7 +98,10 @@ def login():
     return render_template(
         "login.html",
         form=form
+
+
     )
+
 
 @auth_bp.route("/logout")
 @login_required

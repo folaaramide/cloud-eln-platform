@@ -48,6 +48,14 @@ resource "aws_ecs_task_definition" "app" {
         {
           name  = "FLASK_ENV"
           value = "production"
+        },
+        {
+          name  = "SECRET_KEY"
+          value = "cloud-eln-super-secret-key-change-me"
+        },
+        {
+          name  = "DATABASE_URL"
+          value = "postgresql://${var.db_username}:${var.db_password}@${aws_db_instance.postgres.address}:5432/${var.db_name}"
         }
       ]
 
