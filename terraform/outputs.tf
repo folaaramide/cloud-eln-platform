@@ -1,12 +1,3 @@
-# Outputs will be added as infrastructure is created.
-
-# Examples:
-# - Application Load Balancer DNS
-# - ECS Cluster Name
-# - ECS Service Name
-# - Amazon RDS Endpoint
-# - Amazon ECR Repository URL
-
 ########################################
 # VPC
 ########################################
@@ -72,15 +63,6 @@ output "ecs_cluster_arn" {
   value = aws_ecs_cluster.main.arn
 }
 
-#############################
-# Container Image
-#############################
-
-variable "container_image" {
-  description = "Container image URI"
-  type        = string
-  default     = "PLACEHOLDER"
-}
 
 ########################################
 # ECS Task Definition
@@ -94,7 +76,21 @@ output "task_definition_family" {
 # ECS Service
 ########################################
 
-output "ecs_service_name" {
-  description = "ECS Service Name"
-  value       = aws_ecs_service.app.name
+#output "ecs_service_name" {
+#  description = "ECS Service Name"
+#  value       = aws_ecs_service.app.name
+#}
+
+########################################
+# RDS
+########################################
+
+output "rds_endpoint" {
+
+  value = aws_db_instance.postgres.address
+}
+
+output "rds_database_name" {
+
+  value = aws_db_instance.postgres.db_name
 }

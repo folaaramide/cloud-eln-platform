@@ -71,3 +71,9 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "container_image" {
+  description = "Container image URI"
+  type        = string
+  default     = "PLACEHOLDER"
+}

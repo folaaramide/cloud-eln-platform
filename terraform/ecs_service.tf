@@ -1,7 +1,7 @@
 ########################################
 # ECS Service
 ########################################
-
+#
 resource "aws_ecs_service" "app" {
 
   name            = "${var.project_name}-service"
