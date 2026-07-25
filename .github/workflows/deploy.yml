@@ -50,7 +50,7 @@ jobs:
           docker build -t ${{ secrets.ECR_REPOSITORY }} .
 
       - name: Run Trivy Vulnerability Scan
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: "${{ secrets.ECR_REPOSITORY }}:latest"
           format: table
