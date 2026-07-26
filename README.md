@@ -221,21 +221,21 @@ These logs were essential throughout development for:
 
 # Application Screenshots
 
-## Login
+## Homepage
 
-![Login](screenshots/login-page.png)
-
----
-
-## Registration
-
-![Registration](screenshots/register-page.png)
+![Login](screenshots/home-page.png)
 
 ---
 
-## Dashboard
+## Registered Experiment
 
-![Dashboard](screenshots/dashboard.png)
+![Registration](screenshots/saved-experiment.png)
+
+---
+
+## Logged In Dashboard
+
+![Dashboard](screenshots/loggedin-dashboard.png)
 
 ---
 
