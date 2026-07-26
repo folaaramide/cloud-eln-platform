@@ -2,7 +2,7 @@
 
 > Designing, deploying and automating a production-style Electronic Laboratory Notebook (ELN) platform on AWS using modern DevOps engineering practices.
 
-![Architecture](docs/screenshots/architecture.png)
+![Architecture](screenshots/architecture.png)
 
 ---
 
@@ -48,7 +48,7 @@ Infrastructure is provisioned entirely using Terraform and deployments are autom
 
 ## Runtime Architecture
 
-![Runtime Architecture](docs/screenshots/runtime-architecture.png)
+![Runtime Architecture](screenshots/runtime-architecture.png)
 
 ---
 
@@ -129,7 +129,7 @@ Infrastructure includes:
 
 ## AWS Infrastructure
 
-![Infrastructure](docs/screenshots/vpc-resource-map.png)
+![Infrastructure](screenshots/vpc-resource-map.png)
 
 ---
 
@@ -157,7 +157,7 @@ This ensures that every deployment follows a repeatable, automated process witho
 
 ## GitHub Actions Pipeline
 
-![GitHub Actions](docs/screenshots/github-actions.png)
+![GitHub Actions](screenshots/github-actions.png)
 
 ---
 
@@ -215,7 +215,7 @@ These logs were essential throughout development for:
 
 ## CloudWatch Monitoring
 
-![CloudWatch](docs/screenshots/cloudwatch-logs.png)
+![CloudWatch](screenshots/cloudwatch-logs.png)
 
 ---
 
@@ -223,19 +223,19 @@ These logs were essential throughout development for:
 
 ## Login
 
-![Login](docs/screenshots/login-page.png)
+![Login](screenshots/login-page.png)
 
 ---
 
 ## Registration
 
-![Registration](docs/screenshots/register-page.png)
+![Registration](screenshots/register-page.png)
 
 ---
 
 ## Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
