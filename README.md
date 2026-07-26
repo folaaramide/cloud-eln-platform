@@ -106,7 +106,7 @@ Infrastructure is provisioned entirely using Terraform and deployments are autom
 
 ---
 
-# AWS Infrastructure
+# AWS Network Infrastructure
 
 The application runs inside a custom Virtual Private Cloud consisting of multiple Availability Zones to improve resilience.
 
