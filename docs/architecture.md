@@ -12,8 +12,7 @@ Rather than focusing solely on application development, this project demonstrate
 
 ## Runtime Architecture
 
-![Runtime Architecture](screenshots/runtime-architecture.png)Monitoring
-```
+![Runtime Architecture](screenshots/runtime-architecture.png)
 
 ### Request Flow
 
