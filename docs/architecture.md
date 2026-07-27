@@ -14,6 +14,8 @@ Rather than focusing solely on application development, this project demonstrate
 
 ![Runtime Architecture](screenshots/runtime-architecture.png)
 
+---
+
 ### Request Flow
 
 1. Users access the application through HTTPS.
