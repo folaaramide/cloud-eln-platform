@@ -12,22 +12,7 @@ Rather than focusing solely on application development, this project demonstrate
 
 ## Runtime Architecture
 
-```
-                    User (Browser)
-                           │
-                        HTTPS
-                           │
-                           ▼
-             Application Load Balancer
-                           │
-                           ▼
-                 Amazon ECS Fargate
-               Flask Docker Container
-                    │             │
-                    │             │
-                    ▼             ▼
-          Amazon RDS         Amazon CloudWatch
-           PostgreSQL        Logs & Monitoring
+![Runtime Architecture](screenshots/runtime-architecture.png)Monitoring
 ```
 
 ### Request Flow
