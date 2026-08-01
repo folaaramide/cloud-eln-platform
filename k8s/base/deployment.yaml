@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: cloud-eln
+  namespace: cloud-eln
+  labels:
+    app: cloud-eln
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: cloud-eln
+
+  template:
+    metadata:
+      labels:
+        app: cloud-eln
+
+    spec:
+      containers:
+      - name: cloud-eln
+        image: cloud-eln-platform-app:latest
+        imagePullPolicy: IfNotPresent
+
+        ports:
+        - containerPort: 5000
