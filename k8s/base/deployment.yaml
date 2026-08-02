@@ -34,6 +34,10 @@ spec:
           ports:
             - containerPort: 5000
 
+          volumeMounts:
+            - name: cloud-eln-storage
+              mountPath: /data
+
           readinessProbe:
             httpGet:
               path: /
@@ -61,3 +65,8 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
+
+      volumes:
+        - name: cloud-eln-storage
+          persistentVolumeClaim:
+            claimName: cloud-eln-pvc
