@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 
 metadata:
   name: {{ .Values.persistentVolume.claimName }}
-  namespace: cloud-eln
+  namespace: {{ .Release.Namespace }}
 
 spec:
   accessModes:

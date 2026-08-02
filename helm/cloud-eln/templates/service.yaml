@@ -3,7 +3,7 @@ kind: Service
 
 metadata:
   name: cloud-eln-service
-  namespace: cloud-eln
+  namespace: {{ .Release.Namespace }}
 
 spec:
   type: NodePort

@@ -3,7 +3,7 @@ kind: ConfigMap
 
 metadata:
   name: {{ .Values.configMap.name }}
-  namespace: cloud-eln
+  namespace: {{ .Release.Namespace }}
 
 data:
   APP_NAME: "Cloud Electronic Laboratory Notebook"

@@ -3,7 +3,7 @@ kind: Ingress
 
 metadata:
   name: cloud-eln-ingress
-  namespace: cloud-eln
+  namespace: {{ .Release.Namespace }}
 
 spec:
   ingressClassName: {{ .Values.ingress.className }}

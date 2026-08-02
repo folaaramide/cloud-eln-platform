@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: cloud-eln
-  namespace: cloud-eln
+  namespace: {{ .Release.Namespace }}
   labels:
     app: cloud-eln
 
