@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: cloud-eln-ingress
+  namespace: cloud-eln
+
+spec:
+  ingressClassName: nginx
+
+  rules:
+    - host: cloud-eln.local
+
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+
+            backend:
+              service:
+                name: cloud-eln-service
+
+                port:
+                  number: 80
