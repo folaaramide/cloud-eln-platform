@@ -8,7 +8,7 @@ metadata:
     app: cloud-eln
 
 spec:
-  replicas: 1
+  replicas: 3
 
   selector:
     matchLabels:
@@ -22,8 +22,39 @@ spec:
     spec:
       containers:
       - name: cloud-eln
-        image: cloud-eln-platform-app:latest
+        image: cloud-eln-platform-app:v2
         imagePullPolicy: IfNotPresent
 
         ports:
         - containerPort: 5000
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
+
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          timeoutSeconds: 2
+          failureThreshold: 3
+
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
