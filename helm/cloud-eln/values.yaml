@@ -1,0 +1,33 @@
+replicaCount: 3
+
+image:
+  repository: cloud-eln-platform-app
+  tag: test
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+configMap:
+  name: cloud-eln-config
+
+secret:
+  name: cloud-eln-secret
+
+persistentVolume:
+  claimName: cloud-eln-pvc
+
+ingress:
+  enabled: true
+  className: nginx
+  host: cloud-eln.local

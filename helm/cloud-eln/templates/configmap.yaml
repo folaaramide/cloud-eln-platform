@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Values.configMap.name }}
+  namespace: cloud-eln
+
+data:
+  APP_NAME: "Cloud Electronic Laboratory Notebook"
+  APP_ENV: "Development"
+  APP_VERSION: "3.0"
+  COMPANY: "Aramide Labs"
