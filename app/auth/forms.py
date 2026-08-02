@@ -52,3 +52,4 @@ class LoginForm(FlaskForm):
     )
 
     submit = SubmitField("Sign In")
+    

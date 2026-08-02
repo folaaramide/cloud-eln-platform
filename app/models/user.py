@@ -14,3 +14,4 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(255), nullable=False)
 
     role = db.Column(db.String(50), default="Scientist")
+    

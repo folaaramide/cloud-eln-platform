@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 
 from config import Config
@@ -30,6 +32,15 @@ def create_app():
     migrate.init_app(app, db)
     bcrypt.init_app(app)
     login_manager.init_app(app)
+
+    @app.context_processor
+    def inject_app_info():
+        return {
+            "app_name": os.getenv("APP_NAME"),
+            "app_env": os.getenv("APP_ENV"),
+            "app_version": os.getenv("APP_VERSION"),
+            "company": os.getenv("COMPANY"),
+        }
 
     @login_manager.user_loader
     def load_user(user_id):
